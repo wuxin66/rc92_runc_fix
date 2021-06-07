@@ -2,4 +2,5 @@ docker run  \
         -t --privileged --rm \
         -v /lib/modules:/lib/modules:ro \
         -v /home/runc:/go/src/github.com/opencontainers/runc \
-        runc_dev:HEAD make localunittest TESTFLAGS=go build "-mod=vendor" "-buildmode=pie"  -tags "seccomp selinux apparmor" -ldflags "-X main.gitCommit="ff819c7e9184c13b7c2607fe6c30ae19403a7aff-dirty" -X main.version=1.0.0-rc92 " -o runc .
+        runc_dev:HEAD make localunittest TESTFLAGS=
+go build "-mod=vendor" "-buildmode=pie"  -tags "seccomp selinux apparmor" -ldflags "-X main.gitCommit="ff819c7e9184c13b7c2607fe6c30ae19403a7aff-dirty" -X main.version=1.0.0-rc92 " -o runc .
